@@ -2,42 +2,39 @@
   text-align: center;
 }
 
-.App img{
-  height: 100vh;
-  width: 100vw;
+.card-container
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  gap: 10px;
+  padding: 10px;
+  background-color: aqua;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card{
+  /* background: blue; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 1fr 1fr;
+  text-align: left;
+  /* grid-template: "image title" "price price"; */
+  grid-template-areas: 'image' 'title' 'price';
+  height: 350px;
+  width: 350px; 
+  border: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card img{
+  object-fit: cover;
+  width: 100%;
+  background: green;
+  grid-area: image;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card .title{
+  background: red;
+  grid-area: title;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card .price{
+  background: antiquewhite;
+  grid-area: price;
 }
